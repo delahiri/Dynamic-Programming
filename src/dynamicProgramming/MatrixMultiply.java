@@ -1,5 +1,7 @@
 package dynamicProgramming;
 
+//http://www.geeksforgeeks.org/dynamic-programming-set-8-matrix-chain-multiplication/
+
 public class MatrixMultiply {
 
 	public static void main(String[] args) {
