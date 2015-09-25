@@ -1,19 +1,20 @@
 package dynamicProgramming;
 
-import java.util.Map;
-
+//http://www.geeksforgeeks.org/shortest-common-supersequence/
 public class ShortestCommonSupersequence {
 
 	public static void main(String[] args) {
-		String a = "";
-		String b = "";
-		int i;
-		int j;
+		String a = "DEBANIK";
+		String b = "LAHIRI";
+		int i=a.length()-1;
+		int j=b.length()-1;
+		int[][] mem = new int[a.length()+1][b.length()+1];
+		System.out.println(getcomonSuperSeqLen(a, b, i, j, mem));
 		
 		
 	}
 	
-	private int getcomonSuperSeqLen(String a, String b,int i,int j,Map<Integer,Integer> mem)
+	private static int getcomonSuperSeqLen(String a, String b,int i,int j,int[][] mem)
 	{
 		if(i==0 && j==0)
 		{
@@ -34,15 +35,19 @@ public class ShortestCommonSupersequence {
 			int r = Integer.MAX_VALUE;
 			
 			if(a.charAt(i) == b.charAt(j))
-			p = 1+ getcomonSuperSeqLen(a, b, i-1, j-1, mem);
+			p = 2+ getcomonSuperSeqLen(a, b, i-1, j-1, mem);
 			
-			q = getcomonSuperSeqLen(a, b, i, j, mem)
+			q = getcomonSuperSeqLen(a, b, i-1, j, mem)+1;
+			
+			r = getcomonSuperSeqLen(a, b, i, j-1, mem)+1 ;
+			
+			return Math.min(p, Math.min(q, r));
 			
 			
 			
 			
 		}
-		return 0;
+		
 	}
 	
 	
