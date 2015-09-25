@@ -3,6 +3,8 @@ package dynamicProgramming;
 import java.util.HashMap;
 import java.util.Map;
 
+//http://www.geeksforgeeks.org/dynamic-programming-set-10-0-1-knapsack-problem/
+
 public class Knapsack01 {
 	public static void main(String args[])
 	{
