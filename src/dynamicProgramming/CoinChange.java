@@ -21,7 +21,7 @@ public class CoinChange {
 	}
 	private static int typeOfChanges(int d[],int dInd, int n,int[][] mem)
 	{
-		if(n==0)
+		if(n==0) // this is a valid case thats why return 1
 		{
 			return 1;
 		}
