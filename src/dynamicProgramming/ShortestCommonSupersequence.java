@@ -9,6 +9,9 @@ public class ShortestCommonSupersequence {
 		int i=a.length()-1;
 		int j=b.length()-1;
 		int[][] mem = new int[a.length()+1][b.length()+1];
+		for(int p=0;p<=a.length();p++)
+			for(int q=0;q<=b.length();q++)
+				mem[p][q] = -1;
 		System.out.println(getcomonSuperSeqLen(a, b, i, j, mem));
 		
 		
@@ -28,6 +31,10 @@ public class ShortestCommonSupersequence {
 		{
 			return i;
 		}
+		else if(mem[i][j] != -1)
+		{
+			return mem[i][j];
+		}
 		else
 		{
 			int p = Integer.MAX_VALUE;
@@ -41,7 +48,9 @@ public class ShortestCommonSupersequence {
 			
 			r = getcomonSuperSeqLen(a, b, i, j-1, mem)+1 ;
 			
-			return Math.min(p, Math.min(q, r));
+			int val = Math.min(p, Math.min(q, r));
+			mem[i][j] = val;
+			return val;
 			
 			
 			
