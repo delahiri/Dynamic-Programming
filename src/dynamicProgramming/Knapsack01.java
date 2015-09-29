@@ -8,9 +8,9 @@ import java.util.Map;
 public class Knapsack01 {
 	public static void main(String args[])
 	{
-		int vl[] = {60, 100, 120,15,140,160,170};
-	    int wt[] = {10, 20, 25, 30,35, 40,55};
-	    int  tot = 540;
+		int vl[] = {60, 100, 120};
+	    int wt[] = {10, 20, 30};
+	    int  tot = 25;
 	    Map<String,Integer> mem = new HashMap<String,Integer>();
 		int maxWt = getMaxValue(wt,vl,wt.length-1,tot,mem);
 		System.out.println(maxWt);
@@ -31,7 +31,11 @@ public class Knapsack01 {
 		else
 		{
 			// either i take mth or i dont;
-			int val1 = vl[m] + getMaxValue(wt, vl, m-1, tot-wt[m],mem);
+			int val1 = Integer.MIN_VALUE;
+			if(wt[m]<=tot)
+			{
+				 val1 = vl[m] + getMaxValue(wt, vl, m-1, tot-wt[m],mem);
+			}
 			int val2 = getMaxValue(wt, vl, m-1, tot,mem);
 			if(val1 > val2)
 			{

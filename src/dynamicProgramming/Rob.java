@@ -5,7 +5,7 @@ public class Rob {
 	
     public static void main(String args[]) {
     	
-    	int nums[] = {};
+    	int nums[] = {4,6,2,7,6,9,4,6,90,2,3,5,76,34,78};
     	
         if(nums.length ==0)
         System.out.println(0);
