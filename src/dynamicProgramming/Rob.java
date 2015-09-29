@@ -4,13 +4,17 @@ public class Rob {
 	
 	
     public static void main(String args[]) {
+    	
+    	int nums[] = {};
+    	
         if(nums.length ==0)
-        return 0;
-        return rob(nums, nums.length-1,new int[nums.length]);
+        System.out.println(0);
+        else
+        System.out.println(rob(nums, nums.length-1,new int[nums.length]));
         
     }
     
-    private int rob(int[] nums, int n, int[] mem)
+    private static int rob(int[] nums, int n, int[] mem)
     {
         if(n==0)
         {
@@ -36,4 +40,4 @@ public class Rob {
            
         }
     }
-}}
+}
