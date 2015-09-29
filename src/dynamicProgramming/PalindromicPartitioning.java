@@ -1,5 +1,7 @@
 package dynamicProgramming;
 
+// http://www.geeksforgeeks.org/dynamic-programming-set-17-palindrome-partitioning/
+
 public class PalindromicPartitioning {
 
 	public static void main(String[] args) {

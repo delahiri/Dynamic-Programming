@@ -6,9 +6,9 @@ package dynamicProgramming;
 public class CoinChange {
 
 	public static void main(String[] args) {
-		int d[] = {1,2,3};
+		int d[] = {1,2,3,4,5,6};
 		int dInd = d.length-1;
-		int n = 4;
+		int n = 455;
 		
 		int mem[][] = new int[n+1][d.length+1];
 		for(int i=0;i<=n;i++)

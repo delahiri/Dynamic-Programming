@@ -3,8 +3,9 @@ package dynamicProgramming;
 public class MinCoinsRequiredForChange {
 
 	public static void main(String[] args) {
-		int d[] = {5,10,25,50};
-		int n = 300;
+		//int d[] = {1,5,10,25,50};
+		int d[] = {1,3,7};
+		int n = 12;
 		int[][] mem = new int[d.length+1][n+1];
 		for(int i=0;i<=d.length;i++)
 			for(int j=0;j<=n;j++)
@@ -28,15 +29,15 @@ public class MinCoinsRequiredForChange {
 		else
 		{
 			int min = Integer.MAX_VALUE;
-			if(d[ind] > n && ind >=1)
+			if(d[ind] > n )
 			{
 				min = minCoinsReqd(n, d, ind-1,mem);
 			}
 			else
 			{
 				int min1 = 1+ minCoinsReqd(n-d[ind], d, ind,mem);
-				if((ind) >=1)
-				min = minCoinsReqd(n, d, ind-1,mem);
+			//	if((ind) >=1)
+			//	min = minCoinsReqd(n, d, ind-1,mem);
 				
 				min = Math.min(min, min1);
 			}
