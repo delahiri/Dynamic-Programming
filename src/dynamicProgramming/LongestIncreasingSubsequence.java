@@ -3,7 +3,6 @@ package dynamicProgramming;
 public class LongestIncreasingSubsequence {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		
 		int a[] = {10, 22, 9, 33, 21, 50, 41, 60, 80};
 		int l[] = new int[a.length];

@@ -6,7 +6,6 @@ import java.util.Map;
 public class MinCostPath {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		int [][]a = {{9,3,1},{14,18,7},{10,15,13}};
 		Map<String,Integer> mem = new HashMap<String, Integer>();
 		

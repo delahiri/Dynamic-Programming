@@ -23,24 +23,25 @@ public class MinCoinsRequiredForChange {
 		}
 		else if(mem[ind][n] != -1)
 		{
-			System.out.println("Read from memory"+ind+","+n);
+			
 			return mem[ind][n];
 		}
 		else
 		{
-			int min = Integer.MAX_VALUE;
-			if(d[ind] > n )
-			{
-				min = minCoinsReqd(n, d, ind-1,mem);
-			}
-			else
-			{
-				int min1 = 1+ minCoinsReqd(n-d[ind], d, ind,mem);
-			//	if((ind) >=1)
-			//	min = minCoinsReqd(n, d, ind-1,mem);
+				int min1 = Integer.MAX_VALUE, min = Integer.MAX_VALUE;
+				
+				if(ind >=1)
+				{
+					min = minCoinsReqd(n, d, ind-1,mem);
+				}
+				
+				if( n >=d[ind])
+				{
+					min1 = 1+ minCoinsReqd(n-d[ind], d, ind,mem);
+				}
 				
 				min = Math.min(min, min1);
-			}
+			
 			mem[ind][n] = min;
 			return min;
 		}
